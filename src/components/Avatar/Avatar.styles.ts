@@ -17,7 +17,7 @@ export const Avatar = styled.div<AvatarProps>`
     }
     .online {
       position: absolute;
-      z-index: 22;
+      z-index: ${theme.zIndex[1]};
       border-radius: 50%;
       height: ${parseInt(height) / 2.5}rem;
       width: ${parseInt(width) / 2.5}rem;

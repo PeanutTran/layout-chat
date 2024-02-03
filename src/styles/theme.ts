@@ -18,10 +18,17 @@ export const theme = {
       600: '#f0f0f0',
       700: '#e0e0e0',
       800: '#252424bf',
-      900: '#0f172a',
+      900: '#aaa',
     },
   },
   heightMenu: '4.8rem',
+  zIndex: {
+    0: 23,
+    1: 22,
+    2: 21,
+    3: 40,
+    4: 30,
+  },
   devices: {
     laptop: 'max-width: 1080px',
     tablet: 'max-width: 900px',

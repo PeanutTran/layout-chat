@@ -34,7 +34,7 @@ export const MessageList = styled.div`
         position: relative;
         span {
           position: relative;
-          z-index: 4;
+          z-index: ${theme.zIndex[2]};
           padding: 0 1rem;
           background-color: ${theme.colors.slate[400]};
           font-size: 1.4em;

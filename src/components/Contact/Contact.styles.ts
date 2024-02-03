@@ -5,6 +5,30 @@ export const Contact = styled.div`
     height: 100%;
     background-color: ${theme.colors.slate[600]};
     width: 36rem;
+    position: relative;
+    &::before {
+      background: linear-gradient(to right, ${theme.colors.transparent}, ${theme.colors.slate[900]});
+      content: '';
+      height: 100%;
+      opacity: 0.2;
+      pointer-events: none;
+      position: absolute;
+      left: -0.8rem;
+      width: 0.8rem;
+      z-index: ${theme.zIndex[3]};
+    }
+    &::after {
+      background: linear-gradient(to right, ${theme.colors.transparent}, ${theme.colors.slate[900]});
+      content: '';
+      height: 100%;
+      opacity: 0.2;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 0.8rem;
+      z-index: ${theme.zIndex[3]};
+    }
     @media (${theme.devices.tablet}) {
       display: none;
     }
@@ -13,7 +37,33 @@ export const Contact = styled.div`
       width: 100%;
       position: relative;
       .contact-header-content {
-        padding: 2rem;
+        padding: 1.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .btn-wrapper {
+          display: flex;
+          margin-right: 0.5rem;
+        }
+        .header-button:first-child {
+          margin-right: 0.4rem;
+          background-color: ${theme.colors.white};
+          color: ${theme.colors.black};
+        }
+        .header-button {
+          height: 3.2rem;
+          width: 3.2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid ${theme.colors.slate[200]};
+          border-radius: 50%;
+          background-color: ${theme.colors.purple};
+          color: ${theme.colors.white};
+          svg {
+            font-size: 1.6rem;
+          }
+        }
         span {
           line-height: 1;
           font-size: 1.8rem;
@@ -31,6 +81,13 @@ export const Contact = styled.div`
     .contact-body {
       height: calc(100vh - 10.8rem);
       scroll-behavior: smooth;
+      margin-top: 0.1rem;
+      .sticky {
+        position: sticky;
+        top: 0;
+        background: ${theme.colors.slate[600]};
+        z-index: ${theme.zIndex[0]};
+      }
       .contact-type {
         padding: 0.8rem;
         * {
@@ -46,7 +103,6 @@ export const Contact = styled.div`
       }
       .contact-item {
         display: flex;
-        background-color: ${theme.colors.white};
         padding: 0.8rem;
         border-radius: 0.4rem;
         margin-bottom: 0.2rem;
@@ -71,6 +127,9 @@ export const Contact = styled.div`
             white-space: nowrap;
           }
         }
+      }
+      .contact-item.active {
+        background-color: ${theme.colors.white};
       }
     }
   `}

@@ -26,8 +26,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-        'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Web', sans-serif;
       line-height: 1.5;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
@@ -54,6 +54,9 @@ export const GlobalStyle = createGlobalStyle`
     li,
     ol {
       list-style: none;
+    }
+    .ps__rail-y {
+      z-index: 1000;
     }
   `};
 `

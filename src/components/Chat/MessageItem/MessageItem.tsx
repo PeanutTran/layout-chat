@@ -7,7 +7,7 @@ import type { MessageItemProps } from './types'
 import IAvatar from '~/assets/avatar.svg'
 
 export const MessageItem = ({ isCurrent, isToday }: MessageItemProps) => (
-  <S.MessageItem className={`${isCurrent ? 'current-user clear-fix' : ''}`}>
+  <S.MessageItem isCurrent={isCurrent}>
     <div className="bubbles-content">
       {isCurrent ? null : <Avatar src={IAvatar} width="3" height="3" />}
       <div className="message-content">

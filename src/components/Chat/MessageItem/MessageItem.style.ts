@@ -1,21 +1,32 @@
-import styled, { css } from 'styled-components'
+import styled, { DefaultTheme, css } from 'styled-components'
 
-export const MessageItem = styled.div`
-  ${({ theme }) => css`
+import { MessageItemProps } from './types'
+
+const currentUser = (theme: DefaultTheme) => {
+  return css`
+    width: 100%;
+    &::after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+    .bubbles-content {
+      float: right;
+      margin-right: 6.4rem;
+      @media (${theme.devices.tablet}) {
+        margin-right: 0.4rem;
+      }
+    }
+  `
+}
+
+export const MessageItem = styled.div<MessageItemProps>`
+  ${({ theme, isCurrent }) => css`
     display: flex;
     flex-direction: column;
     display: list-item;
     list-style: none;
-    &.current-user {
-      width: 100%;
-      .bubbles-content {
-        float: right;
-        margin-right: 6.4rem;
-        @media (${theme.devices.tablet}) {
-          margin-right: 0.4rem;
-        }
-      }
-    }
+    ${isCurrent && currentUser(theme)}
     .bubbles-content {
       display: inline-flex;
       max-width: calc(100% - 11.6rem);
@@ -40,7 +51,7 @@ export const MessageItem = styled.div`
         }
         .message-item-text {
           font-size: 1.4rem;
-          color: ${theme.colors.slate[100]};
+          color: ${theme.colors.slate[500]};
         }
       }
     }
